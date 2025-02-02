@@ -1,0 +1,39 @@
+Lista de Exercícios
+Exercício 01
+Faça um programa que leia as duas notas de um aluno em uma matéria e mostre na tela a sua média na disciplina. Ex: Nota 1: 4.5 Nota 2: 8.5 A média entre 4.5 e 8.5 é igual a 6.5
+
+
+Exercício 02
+Crie um algoritmo que receba o valor da temperatura em graus celsius e converta para Fahrenheit.
+
+
+Exercício 03
+Crie um algoritmo que leia um número real e mostre na tela o seu dobro e a sua terça parte. Ex: Digite um número: 3.5 O dobro de 3.5 é 7.0 A terça parte de 3.5 é 1.16666
+
+
+Exercício 04
+Faça um algoritmo que leia quanto dinheiro uma pessoa tem na carteira (em R$) e mostre quantos dólares ela pode comprar. Considere US$1,00 = R$5,11.
+
+
+Exercício 05
+Faça um algoritmo que leia a largura e altura de uma parede, calcule e mostre a área a ser pintada e a quantidade de tinta necessária para o serviço, sabendo que cada litro de tinta pinta uma área de 2metros quadrados.
+
+
+Exercício 06
+Faça um algoritmo que leia o salário de um funcionário, calcule e mostre o seu novo salário, com 15% de aumento.
+
+
+Exercício 07
+Crie um programa que leia o preço de um produto, calcule e mostre o seu PREÇO PROMOCIONAL, com 5% de desconto.
+
+
+Exercício 08
+Crie um algoritmo que receba as 4 notas do aluno e traga como resposta a média ponderada, conforme abaixo:
+  Nota1: Peso 1,0
+  Nota2: Peso 1,0
+  Nota3: Peso 4,0
+  Nota4: Peso 4,0
+
+
+Exercício 09
+A locadora de carros precisa da sua ajuda para cobrar seus serviços. Escreva um programa que pergunte a quantidade de Km percorridos por um carro alugado e a quantidade de dias pelos quais ele foi alugado. Calcule o preço total a pagar, sabendo que o carro custa R$90 por dia e R$0,20 por Km rodado.
