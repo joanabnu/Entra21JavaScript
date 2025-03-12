@@ -1,0 +1,14 @@
+{
+  "name": "integraca-banco",
+  "version": "1.0.0",
+  "description": "projeto de integracao de banco de dados com mysql e node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "joana",
+  "license": "ISC",
+  "dependencies": {
+    "mysql2": "^3.13.0"
+  }
+}
