@@ -1,0 +1,57 @@
+create datABASE BLOG;
+ use blog;
+CREATE TABLE `postagens` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `titulo` varchar(200) NOT NULL,
+  `conteudo` longtext,
+  `autor_id` int NOT NULL,
+  `imagem_capa` text,
+  `postado_em` datetime NOT NULL,
+  `categoria_id` int NOT NULL,
+  `regiao_id` int NOT NULL
+);
+
+CREATE TABLE `usuarios` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `usuario_id` varchar(20) UNIQUE NOT NULL,
+  `senha` varchar(255) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `data_criacao` datetime NOT NULL,
+  `data_nascimento` date NOT NULL
+);
+
+CREATE TABLE `autores` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `usuario` int UNIQUE NOT NULL,
+  `biografia` longtext,
+  `imagem` text,
+  `link` text
+);
+
+CREATE TABLE `categorias` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `categoria` varchar(100) NOT NULL
+);
+
+CREATE TABLE `regioes` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `regiao` varchar(100) NOT NULL
+);
+
+CREATE TABLE `comentarios` (
+  `id` INT PRIMARY KEY AUTO_INCREMENT,
+  `comentario` varchar(255) NOT NULL,
+  `usuario_id` int NOT NULL,
+  `postado_em` datetime NOT NULL,
+  `postagem_id` int NOT NULL
+);
+
+ALTER TABLE `postagens` ADD FOREIGN KEY (`categoria_id`) REFERENCES `categorias` (`id`);
+
+ALTER TABLE `postagens` ADD FOREIGN KEY (`regiao_id`) REFERENCES `regioes` (`id`);
+
+ALTER TABLE `postagens` ADD FOREIGN KEY (`autor_id`) REFERENCES `autores` (`id`);
+
+ALTER TABLE `usuarios` ADD FOREIGN KEY (`id`) REFERENCES `autores` (`usuario`);
+
+ALTER TABLE `comentarios` ADD FOREIGN KEY (`usuario_id`) REFERENCES `usuarios` (`id`);
