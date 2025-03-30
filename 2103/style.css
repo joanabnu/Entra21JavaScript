@@ -1,0 +1,27 @@
+div{
+    color: red;
+}
+h1{
+    color: bisque;
+}
+#h1-azul{
+    color: blue;
+}
+#h2-vermelho{
+    color: red;
+}
+#h3-verde{
+    color: rgb(29, 207, 29);
+}
+#h1-amarelo{
+    color: cadetblue;
+}
+.bord-fina{
+    border: 3px solid darkgoldenrod ;
+}
+#bolinha{
+    background-color: brown;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+}

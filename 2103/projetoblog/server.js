@@ -2,6 +2,9 @@ import mysql from 'mysql2'
 import dotenv from 'dotenv'
 import cors from 'cors'
 import express, { query } from 'express'
+import slugify from 'slugify';
+import bcrypt from 'bcryptjs';
+
 dotenv.config()
 
 console.log({
@@ -99,6 +102,65 @@ app.delete('/deletar/:id',(req,res)=>{
         }
         res.status(200).json({message: `Registro com Id ${id} foi deletado com sucesso`})
     });
+})
+
+app.post('/cadastrar/categoria',(req,res)=>{
+    const {categoria} = req.body;
+    const slug = slugify(categoria,{lower:true,strict:true})
+
+    const query = 'INSERT INTO categorias (categoria,slug) Values(?,?)';
+    connection.query(query,[categoria,slug], (error,result) =>{
+        if(error){
+            return res.status(500).json({error:error})
+        }
+        else{
+            return res.status(201).json({message:'Inserido com sucesso', id: result.insertId})
+        }
+    })
+})
+// app.post('/cadastrar/regioes',(req,res)=>{
+//     const {regiao} = req.body;
+//     const slug = slugify(regiao,{})
+// })
+
+app.post('/cadastrar/usuarios',async (req,res)=>{
+    const {usuario, senha,nome,data_nascimento} = req.body;
+    try{
+        const salt = await bcrypt.genSalt(10)
+        const senhaCriptografada = await bcrypt.hash(senha,salt);
+
+        const query = 'INSERT INTO usuarios(usuario,senha,nome,data_criacao,data_nascimento) VALUES(?,?,?,NOW(),?)';
+        connection.query(query,[usuario,senhaCriptografada,nome,data_nascimento],(error,result)=>{
+          if(error){
+            return res.status(500).json({error: error, message: 'Erro ao inserir usuario'})
+          }
+          else{
+            return res.status(201).json({message: 'Cadastrado com sucesso',id:result.insertId})
+          }
+        })
+
+    }
+    catch(error){
+      res.status(500).json({error:error,message: 'Erro ao processar senha'})
+    }
+
+})
+
+app.post('/cadastrar/autor',(req,res)=>{
+    const{usuario_id,biografia,imagem,link} = req.body;
+    if(!usuario_id || !biografia || !imagem || !link){
+        return res.status(400).json({error:'Todos os campos são obrigatorios'})
+    }
+    let query = 'INSERT INTO autores(usuario_id,biografia,imagem,link) Values(?,?,?,?)';
+    let parameters = [usuario_id,biografia,imagem,link] 
+    connection.query(query.parameters,(error,result)=>{
+        if(error){
+            return res.status(500).json({error:"Erro ao cadastrar", detail:error});
+
+        }
+        res.status(201).json({message:"Realizado com sucesso",id:result.insertId})
+    })
+
 })
 
 app.listen(3303, () => {

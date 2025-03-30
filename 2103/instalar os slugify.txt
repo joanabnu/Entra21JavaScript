@@ -1,0 +1,13 @@
+instalar os slugify
+npm install slugify
+
+gerar uma criptografia 
+npm install bcryptjs
+
+rota post para fazer postagem para fazer o comentários update para todas as tabelas update do usuário é necessário criptografia novamente e na comentários e postagem há colona de ativos tem que ter update de para aquela colona  
+{
+  "usuario_id": 1,
+  "biografia": "Sou um autor apaixonado por tecnologia e inovação.",
+  "imagem": "imagem_url.jpg",
+  "link": "http://meuportfolio.com"
+}

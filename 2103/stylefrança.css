@@ -1,0 +1,26 @@
+#azul {
+    background-color: blue;
+}
+
+#vermelho {
+    background-color: red;
+}
+
+#branco {
+    background-color: white;
+}
+
+#bandeira {
+    width: 100vw;
+    height: 100vw;
+    display: flex;
+   
+
+}
+
+body {
+    margin: 0;
+}
+.faixa{
+  flex: 1;
+}

@@ -1,0 +1,32 @@
+#azul-1 {
+  background-color: rgb(117, 170, 219);
+}
+#branco-1{
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.sol {
+  width: 150px; /* Ajuste o tamanho conforme necessário */
+  height: auto;
+  /* align-items: center;
+  justify-content: center; */
+}
+#azul-2 {
+  background-color: rgb(117, 170, 219);
+}
+#bandeira {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+ 
+ 
+}
+body {
+  margin: 0;
+}
+.faixa {
+  flex: 1;
+}
