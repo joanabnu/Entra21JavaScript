@@ -1,0 +1,19 @@
+img{
+    border-radius: 50%;
+     /* border-top: 5px solid blueviolet;  */
+     /* border-bottom: 10px dotted black; */
+     /* border-left: 20px dashed red; */
+     /* border-right: 6px double green; */
+     transition: opacity 5s ease-in;
+     border: 5px solid saddlebrown;
+     opacity: 30%;
+    
+     justify-content: center;
+     display: flex;
+
+} 
+
+img:hover{
+    opacity:100;
+    border: 10px dotted rebeccapurple;
+}

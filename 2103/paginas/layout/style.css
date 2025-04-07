@@ -1,0 +1,39 @@
+.botoes{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin:0.05vh;
+}
+.botao{
+    background-color: rgb(240, 209, 74);
+    border-radius: 15%;
+    width: 15vh;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12vh;
+}
+.botao:hover{
+    background-color: rgb(77, 112, 226);
+}
+#corpo{
+    background-color: rgb(5, 5, 5);
+    width: 65vh;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-around;
+   
+}
+#visor{
+    background-color: rgb(171, 172, 166);
+    border: 2px solid rgb(110, 106, 106);
+    font-size: 12vh;
+    height: 12vh;
+    font-size: 11vh;
+    margin:  1vh;
+
+}
+body{
+    margin: 0;
+}

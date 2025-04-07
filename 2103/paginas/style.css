@@ -1,0 +1,22 @@
+nav{
+    background-color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    background-color: bisque;
+    text-align: center;
+}
+a{
+    color: aliceblue;
+    text-decoration: none;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+nav ul li{
+    font-weight: bold;
+    margin: 5px;
+}

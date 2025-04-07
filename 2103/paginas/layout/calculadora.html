@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora 31/03/2025</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function zerarVisor(){
+            let visor = document.getElementById('visor')
+            
+            visor.innerText = ''
+        }
+        function removerUltimo(){
+            let visor = document.getElementById('visor')
+           
+             if(visor.innerText.length > 0){
+                visor.innerText = visor.innerText.slice(0,-1)
+             }
+        }
+        function adicionarNoVisor(valor){
+            let visor = document.getElementById('visor')
+            const operadores = ['+','-','*','/']
+            const ultimoCaractere = visor.innerText.charAt(visor.innerText.length - 1)
+
+            if(operadores.includes(ultimoCaractere) && operadores.includes(valor)){
+                removerUltimo()
+                adicionarNoVisor(valor)
+                return
+            }
+            visor.innerText +=valor
+           
+        }
+        
+        function calculaResultado(){
+            let numeroAtual = document.getElementById(visor.innerText)
+            let visor = document.getElementById('visor')
+            try{
+                visor.innerText = eval(visor.innerText)
+            }
+            catch{
+                visor.innerText = 'Error'
+            }
+            
+        }
+    </script>
+</head>
+<body>
+   <div id="corpo">
+    <div id="visor"></div>
+    <div class="botoes">
+        <div class="botao" onclick="removerUtimo(this.innerText)" >c</div>
+        <div class="botao" onclick="zerarVisor(this.innerText)">ce</div>
+        <div class="botao" onclick="adicionarNoVisor(this.innerText)">(</div>
+        <div class="botao" onclick="adicionarNoVisor(this.innerText)">)</div>
+       </div>
+    <div class="botoes">
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)" >7</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">8</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">9</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText), repeticao(this.innerText)">+</div>
+   </div>
+   <div class="botoes">
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">4</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">5</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">6</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">-</div>
+   </div>
+   <div class="botoes"> 
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">1</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">3</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">0</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">*</div>
+   </div>
+   <div class="botoes">
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">0</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">.</div>
+    <div class="botao" onclick="calculaResultado()">=</div>
+    <div class="botao" onclick="adicionarNoVisor(this.innerText)">/</div>
+   </div>
+
+
+
+</body>
+</html>
